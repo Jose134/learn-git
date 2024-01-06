@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    --var-color-bg: #080808;
+    --var-text-primary: #fafaff;
+}
+
+html {
+    background-color: var(--var-color-bg);
+    color: var(--var-text-primary);
+    font-size: 1.2em;
+}
+
+body {
+    font-family: Karla;
+}
+
+h1 {
+    font-family: Kanit;
+}
