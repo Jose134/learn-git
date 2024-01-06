@@ -1,27 +1,45 @@
-# LearnGit
+# Learn-Git
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.8.
+Welcome to the Learn-Git website's repository! This project aims to provide a beginner-friendly guide to understanding and using Git, covering everything from the basics to more advanced concepts.
 
-## Development server
+## Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+This website serves as an interactive tutorial to help individuals grasp the essential concepts of Git version control system from the ground up. It's structured to be easy to follow and includes practical examples and exercises.
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Structured Learning:** Sequential tutorials guiding through Git concepts.
+- **Visual Aids:** Diagrams and visual representations for clarity.
+- **Practice Exercises:** Hands-on exercises for practicing Git commands.
+- **Resources:** Additional links for further learning and references.
 
-## Build
+## How to Use
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+This Git tutorial is hosted using GitHub Pages. Simply visit [Learn-Git](We don't have a link yet hehe) to start exploring and learning Git.
 
-## Running unit tests
+## Contributing
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Contributions to enhance this Git tutorial are welcome! You can contribute by:
 
-## Running end-to-end tests
+- **Creating Issues:** Create an issue on this repository to suggest improvements, report bugs, or propose new features.
+- **Creating Pull Requests:** Make modifications directly to the repository and create pull requests.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Resources
 
-## Further help
+- **Official Git Documentation:** [Git - Documentation](https://git-scm.com/doc)
+- **GitHub Guides:** [GitHub Guides](https://guides.github.com/)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+
+**THIS IS JUST A PLACEHOLDER UNTIL THE LICENSE IS DECIDED**
+This project is licensed under the [NO LICENSE YET](LICENSE). Feel free to use, modify, and distribute it.
+
+---
+
+Start your Git journey from scratch and empower yourself with version control! Happy learning!
+
+
+
+> Thanks to ChatGPT for providing the first version of this Readme
+>
+> Att: Jose134
