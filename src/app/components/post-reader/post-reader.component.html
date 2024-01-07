@@ -1,0 +1,9 @@
+
+<ng-template [ngIf]="this.fileExists" [ngIfElse]="notFound">
+    <markdown
+        [src]="'assets/articles/' + this.src"
+    >
+    </markdown>
+</ng-template>
+
+<ng-template #notFound>Sorry, this article doesn't seem to exist :C</ng-template>
