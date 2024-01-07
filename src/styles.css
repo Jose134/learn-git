@@ -22,30 +22,50 @@ h1 {
 
 /* CODEBLOCK STYLING */
 
+.codeblock {
+    /* Needed to place Hover text on top of solutions */
+    position: relative;
+}
+
 pre {
     background: #222;
     border-left: 8px solid #444;
     padding: 5px;
 }
 
-
-/* SOLUTION STYLING */
-
-/* .hover-instructions {
-    background-color: rgba(0,0,0,0.4);
-
+.hover-instructions {
+    /* Place on top of the codeblock */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
+
+    /* Center the text */
+    display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
-} */
-
-.code-solution {
-    filter: blur(5px);
-    transition: filter 100ms;
 }
 
-pre:hover .code-solution {
+.codeblock pre {
+    /* Make the block darker */
+    filter: opacity(0.4);
+    transition: filter 150ms;
+}
+
+.code-solution {
+    /* Blur the text */
+    filter: blur(10px);
+    transition: filter 150ms;
+}
+
+.codeblock:hover .code-solution  {
     filter: none;
+}
+.codeblock:hover pre  {
+    filter: none;
+}
+.codeblock:hover .hover-instructions {
+    z-index: -1;
 }
