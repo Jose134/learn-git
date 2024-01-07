@@ -1,0 +1,28 @@
+.navbar {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.title-container h1 {
+    margin: 0px;
+    font-size: 3rem;
+}
+
+.links-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.links-container a {
+    margin: 5px;
+    color: var(--var-text-link);
+    transition: color 100ms;
+}
+
+.links-container a:hover {
+    color: var(--var-text-link-hover);
+}

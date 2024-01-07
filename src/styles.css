@@ -2,6 +2,8 @@
 :root {
     --var-color-bg: #080808;
     --var-text-primary: #fafaff;
+    --var-text-link: #fafaff;
+    --var-text-link-hover: #cacacc;
 }
 
 html {
