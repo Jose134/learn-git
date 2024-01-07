@@ -17,7 +17,7 @@ export class ArticleComponent implements OnInit {
   
   ngOnInit(): void {
     let articleName = this.route.snapshot.params['name'];
-    this.articleFile = `${articleName}.md`;
+    this.articleFile = `assets/articles/${articleName}.md`;
   }
 
 }

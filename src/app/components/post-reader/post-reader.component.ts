@@ -14,7 +14,7 @@ import { Observable, catchError, map, of } from 'rxjs';
 export class PostReaderComponent implements OnInit {
   
   @Input({required: true}) src: string = '';
-  fileExists: boolean = true;
+  fileExists: boolean = false;
 
   constructor(private http: HttpClient) {}
 
@@ -25,7 +25,7 @@ export class PostReaderComponent implements OnInit {
   }
 
   checkFileExists(url: string): Observable<boolean> {
-    return this.http.get(url)
+    return this.http.get(url, { responseType: 'blob' })
     .pipe(
         map(response => {
             return true;

@@ -1,7 +1,6 @@
-
 <ng-template [ngIf]="this.fileExists" [ngIfElse]="notFound">
     <markdown
-        [src]="'assets/articles/' + this.src"
+        [src]="this.src"
     >
     </markdown>
 </ng-template>
