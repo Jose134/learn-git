@@ -1,9 +1,18 @@
 .navbar {
     display: flex;
-    width: 100%;
-
     justify-content: space-between;
+    
+    position: sticky;
+    top: 0;
+    width: 100%;
     margin-bottom: 50px;
+
+    background-color: black;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.title-container {
+    margin-left: 25%;
 }
 
 .title-container h1 {
@@ -15,6 +24,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 25%;
 }
 
 .links-container a {

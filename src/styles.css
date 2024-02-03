@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
-    --var-color-bg: #080808;
+    --var-color-bg: #0c0c0c;
     --var-text-primary: #fafaff;
     --var-text-link: #fafaff;
     --var-text-link-hover: #cacacc;
@@ -14,6 +14,7 @@ html {
 
 body {
     font-family: Karla;
+    margin: 0;
 }
 
 h1 {
