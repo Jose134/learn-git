@@ -12,6 +12,7 @@ Ready to start your git journey? Trying to find an explanation for a part of git
     3. [HEAD]()
 4.  [Adding & Committing but not crimes]()
     1. [.gitignore]()
+    2. [Fixing a commit with --amend]()
 5.  [Logging]()
 6.  [Branching]()
 7.  [Stashing]()
