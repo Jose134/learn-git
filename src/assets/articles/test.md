@@ -1,6 +1,10 @@
-# This is a test h1
-## This is a test h2
-### This is a test h3
+# This is a test h1 
+# This is a test h1 <chip>beginner</chip> SEPARATOR <chip>unclassified</chip>
+# This is a test h1 <chip>intermediate</chip> <chip>unclassified :)</chip>
+# This is a test h1 <chip>advanced</chip>
+# This is a test h1 <chip>unclassified</chip>
+## This is a test h2 <chip>beginner</chip>
+### This is a test h3 <chip>beginner</chip>
 #### This is a test h4
 ##### This is a test h5
 ###### This is a test h6
@@ -16,6 +20,7 @@
 > oh yeah
 
     code block
+    multiline tho
 
 1. ol item 1
 2. ol item 2

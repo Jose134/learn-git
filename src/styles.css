@@ -69,3 +69,31 @@ pre {
 .codeblock:hover .hover-instructions {
     z-index: -1;
 }
+
+.chip {
+    display: inline-block;
+    
+    user-select: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    background-color: white;
+
+    line-height: 20px;
+    border-radius: 40px;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.chip-beginner {
+    background-color: lime;
+}
+
+.chip-intermediate {
+    background-color: orange;
+}
+
+.chip-advanced {
+    background-color: red;
+}
