@@ -12,7 +12,6 @@ export function markedOptionsCustom(): MarkedOptions {
         const chipSearch = text.matchAll(/\s*<chip>[^<]*<\/chip>\s*/g);
         const matches = [...chipSearch];
         matches.forEach(match => {
-            console.log(match);
             const chipText = match[0].replace(/\s+<chip>/, '').replace(/<\/chip>/, '');
             text = text.replace(match[0], ` <span class="chip chip-${chipText}">${chipText}</span> `);
         });
