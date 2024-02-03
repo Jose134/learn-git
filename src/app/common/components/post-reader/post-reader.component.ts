@@ -13,15 +13,17 @@ import { Observable, catchError, map, of } from 'rxjs';
 })
 export class PostReaderComponent implements OnInit {
   
-  @Input({required: true}) src: string = '';
+  @Input({required: true}) src: string | null = null;
   fileExists: boolean = false;
 
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
-    this.checkFileExists(this.src).subscribe((res: boolean) => {
-      this.fileExists = res;
-    });
+    if (this.src) {
+      this.checkFileExists(this.src).subscribe((res: boolean) => {
+        this.fileExists = res;
+      });
+    }
   }
 
   checkFileExists(url: string): Observable<boolean> {

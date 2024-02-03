@@ -1,23 +1,31 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { PostReaderComponent } from '../../components/post-reader/post-reader.component';
+import { PostReaderComponent } from '../../common/components/post-reader/post-reader.component';
+import { CommonModule } from '@angular/common';
+import { IndexService } from '../../common/services/index-service';
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [PostReaderComponent],
+  imports: [PostReaderComponent, CommonModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
 export class ArticleComponent implements OnInit {
 
-  articleFile: string = '';
+  previousRoute: string | null = null;
+  nextRoute: string | null = null;
+  articleFile: string | null = null;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(private route: ActivatedRoute, private indexService: IndexService) {}
   
   ngOnInit(): void {
     let articleName = this.route.snapshot.params['name'];
-    this.articleFile = `assets/articles/${articleName}.md`;
+    this.previousRoute = this.indexService.getPreviousRoute(articleName);
+    this.nextRoute = this.indexService.getNextRoute(articleName);
+    this.articleFile = this.indexService.getFilePath(articleName);
+
+    console.log(this.previousRoute, this.nextRoute, this.articleFile);
   }
 
 }

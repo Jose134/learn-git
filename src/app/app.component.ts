@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { MarkdownComponent } from 'ngx-markdown';
 import { HttpClient } from '@angular/common/http';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './common/components/navbar/navbar.component';
 
 @Component({
   selector: 'app-root',

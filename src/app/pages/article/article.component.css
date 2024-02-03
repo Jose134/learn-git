@@ -1,0 +1,33 @@
+.relative-navigation-container {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 100%;
+    padding: 20px;
+    background-color: #151515;
+    border-radius: 10px;
+    border: 1px solid #2a2a2a;
+}
+
+.rel-nav-link {
+    color: white;
+    text-decoration: none;
+}
+
+.rel-nav-link-prev::before {
+    content: '❮';
+    transition: margin-right 100ms;
+}
+.rel-nav-link-next::after {
+    content: '❯';
+    transition: margin-left 100ms;
+}
+
+.rel-nav-link-prev:hover::before {
+    margin-right: 10px;
+}
+.rel-nav-link-next:hover::after {
+    margin-left: 10px;
+}
