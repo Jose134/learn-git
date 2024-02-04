@@ -20,3 +20,8 @@ body {
 h1 {
     font-family: Kanit;
 }
+
+a {
+    color: #bbe3ce;
+    /* color: #63b9d9; */
+}

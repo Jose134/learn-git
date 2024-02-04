@@ -5,7 +5,9 @@ import { IndexEntry } from "../models/index-entry";
 export class IndexService {
 
     index: IndexEntry[] = [
-        { route: 'index', filepath: 'assets/articles/index.md' }
+        { route: 'solutiontest', filepath: 'assets/articles/solutiontest.md' },
+        { route: 'index', filepath: 'assets/articles/index.md' },
+        { route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md' },
     ];
 
     getPreviousRoute(route: string): string | null {

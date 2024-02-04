@@ -6,6 +6,15 @@ export function markedOptionsCustom(): MarkedOptions {
 
     const renderer = new MarkedRenderer();
     
+    const rendererParagraph = renderer.paragraph;
+    renderer.paragraph = (text: string) => {
+        if (text.startsWith('GIT-SVG')) {
+            const filename = text.split('\n')[1];
+            return filename ? `<img src="assets/svg/${filename}"></img>` : `Could not load ${filename}`;
+        }
+        return rendererParagraph(text);
+    };
+
     const rendererHeading = renderer.heading;
     renderer.heading = (text: string, level: number, raw: string) => {
         // Header customization for chip support
