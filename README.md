@@ -31,8 +31,7 @@ Contributions to enhance this Git tutorial are welcome! You can contribute by:
 
 ## License
 
-**THIS IS JUST A PLACEHOLDER UNTIL THE LICENSE IS DECIDED**
-This project is licensed under the [NO LICENSE YET](LICENSE). Feel free to use, modify, and distribute it.
+This project is licensed under the [GNU GPLv3](COPYING). Feel free to use, modify, and distribute it.
 
 ---
 
