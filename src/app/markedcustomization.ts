@@ -18,11 +18,12 @@ export function markedOptionsCustom(): MarkedOptions {
     const rendererHeading = renderer.heading;
     renderer.heading = (text: string, level: number, raw: string) => {
         // Header customization for chip support
-        const chipSearch = text.matchAll(/\s*<chip>[^<]*<\/chip>\s*/g);
+        const chipSearch = text.matchAll(/\s*<chip>[^<]*<\/chip>/g);
         const matches = [...chipSearch];
         matches.forEach(match => {
             const chipText = match[0].replace(/\s+<chip>/, '').replace(/<\/chip>/, '');
-            text = text.replace(match[0], ` <span class="chip chip-${chipText}">${chipText}</span> `);
+            const chipTextForClass = chipText.replace(/\s+/g, '-'); // TODO: make proper class name building
+            text = text.replace(match[0], ` <span class="chip chip-${chipTextForClass}">${chipText}</span> `);
         });
         return rendererHeading(text, level, raw);
     };
@@ -58,3 +59,30 @@ export function markedOptionsCustom(): MarkedOptions {
         pedantic: false,
     }
 }
+
+// function makeValidClassName(str: string) {
+//     if (str === '') {
+//         return str;
+//     }
+
+//     // Regular expression to match invalid characters in CSS class names
+//     let invalidCharsRegex = /[^-_a-zA-Z0-9]/g;
+
+//     // Remove invalid characters from the input string
+//     let validClassName = str.replace(invalidCharsRegex, '');
+
+//     // Ensure the class name starts with a letter or underscore
+//     if (/^[0-9]/.test(validClassName)) {
+//         validClassName = '_' + validClassName; // Prefix with underscore if it starts with a number
+//     }
+
+//     // Replace spaces between words with hyphens
+//     validClassName = validClassName.replace(/\s+/g, '-');
+
+//     // Remove consecutive hyphens or underscores
+//     validClassName = validClassName.replace(/[-_]{2,}/g, function(match) {
+//         return match.charAt(0); // Replace with a single hyphen or underscore
+//     });
+
+//     return validClassName.toLowerCase();
+// }
