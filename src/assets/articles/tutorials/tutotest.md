@@ -32,7 +32,7 @@ test1.svg
                     "commits": [
                         {
                             "hash": "fdsa1",
-                            "parents": ["asdf2"]
+                            "parents": [ "asdf1" ]
                         },
                         {
                             "hash": "fdsa2",

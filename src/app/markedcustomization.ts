@@ -10,7 +10,7 @@ export function markedOptionsCustom(): MarkedOptions {
     renderer.paragraph = (text: string) => {
         if (text.startsWith('GIT-SVG')) {
             const filename = text.split('\n')[1];
-            return filename ? `<img src="assets/svg/${filename}"></img>` : `Could not load ${filename}`;
+            return filename ? `<img class="git-svg-graph" src="assets/svg/${filename}"></img>` : `Could not load ${filename}`;
         }
         return rendererParagraph(text);
     };
