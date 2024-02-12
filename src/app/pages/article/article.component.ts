@@ -24,8 +24,6 @@ export class ArticleComponent implements OnInit {
     this.previousRoute = this.indexService.getPreviousRoute(articleName);
     this.nextRoute = this.indexService.getNextRoute(articleName);
     this.articleFile = this.indexService.getFilePath(articleName);
-
-    console.log(this.previousRoute, this.nextRoute, this.articleFile);
   }
 
 }
