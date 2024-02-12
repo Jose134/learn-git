@@ -7,10 +7,14 @@ const ARTICLES_PATH = './src/assets/articles/tutorials';
 
 const COLOR_COMMIT_FILL = '#000000';
 const COLOR_COMMIT_STROKE = '#ffffff';
-const COLOR_BRANCH_STROKE = '#ff0000';
+const COLOR_COMMIT_NAME_TEXT = '#ffffff';
+const COLOR_COMMIT_LINK_STROKE = '#ffffff';
+const COLOR_BRANCH_STROKE = '#bbe3ce';
+const COLOR_BRANCH_NAME_TEXT = '#ffffff';
 
 const COMMIT_RADIUS = 30;
 const COMMIT_STROKE = 5;
+const COMMIT_LINK_STROKE = 3;
 const BRANCH_HEIGHT = 70;
 const BRANCH_LINE_PERCENT_X1 = 20;
 const BRANCH_LINE_PERCENT_X2 = 90;
@@ -68,7 +72,6 @@ function buildSvg(svg, graph) {
         // Branch lines
         repo.branches.forEach((branch, branchIdx) => {
             const CURRENT_BRANCH_Y = (branchIdx+1) * BRANCH_HEIGHT;
-
             let branchGroup = svg.append('g');
             
             // Branch name
@@ -80,7 +83,7 @@ function buildSvg(svg, graph) {
                     .attr('font-family', 'Karla') // TODO: font doesnt work
                     .attr('text-anchor', 'end')
                     .attr('dominant-baseline', 'middle')
-                    .attr('fill', 'white')
+                    .attr('fill', COLOR_BRANCH_NAME_TEXT)
                     .html(branch.name);
             }
 
@@ -92,22 +95,6 @@ function buildSvg(svg, graph) {
                 .attr('y2', CURRENT_BRANCH_Y)
                 .attr('stroke', COLOR_BRANCH_STROKE)
                 .attr('stroke-dasharray', 10);
-            let commitGroup = branchGroup.append('g');
-
-            // Commit circles
-            branch.commits.forEach((commit, commitIdx) => {
-                const coords = commitsCoordMap[commit.hash];
-                let commitSvg = commitGroup.append('g');
-                let commitCircle = commitSvg.append('circle')
-                    .attr('cx', COMMIT_RADIUS + BRANCH_LINE_PERCENT_X1 * 10 + coords.x * commitBoxWidth)
-                    .attr('cy', coords.y * BRANCH_HEIGHT)
-                    .attr('r', COMMIT_RADIUS)
-                    .attr('fill', COLOR_COMMIT_FILL)
-                    .attr('stroke', COLOR_COMMIT_STROKE)
-                    .attr('stroke-width', COMMIT_STROKE);
-
-                // TODO: commit name, optional hash
-            });
         });
 
         // Commit lines
@@ -121,10 +108,43 @@ function buildSvg(svg, graph) {
                         .attr('y1', commitsCoordMap[pHash].y * BRANCH_HEIGHT)
                         .attr('x2', COMMIT_RADIUS + BRANCH_LINE_PERCENT_X1 * 10 + commitsCoordMap[c.hash].x * commitBoxWidth)
                         .attr('y2', commitsCoordMap[c.hash].y * BRANCH_HEIGHT)
-                        .attr('stroke', 'black')
-                        .attr('stroke-width', 2);
+                        .attr('stroke', COLOR_COMMIT_LINK_STROKE)
+                        .attr('stroke-width', COMMIT_LINK_STROKE);
                 });
             }
+        });
+
+        // Commits
+        let commitsSvg = svg.append('g'); 
+        allCommits.forEach((commit) => {
+            const coords = commitsCoordMap[commit.hash];
+            let commitSvg = commitsSvg.append('g');
+            
+            // Circle
+            const cx = COMMIT_RADIUS + BRANCH_LINE_PERCENT_X1 * 10 + coords.x * commitBoxWidth;
+            const cy = coords.y * BRANCH_HEIGHT;
+            let commitCircle = commitSvg.append('circle')
+                .attr('cx', cx)
+                .attr('cy', cy)
+                .attr('r', COMMIT_RADIUS)
+                .attr('fill', COLOR_COMMIT_FILL)
+                .attr('stroke', COLOR_COMMIT_STROKE)
+                .attr('stroke-width', COMMIT_STROKE);
+
+            // Name
+            if (commit.name) {
+                let commitName = commitSvg.append('text')
+                    .attr('x', cx)
+                    .attr('y', cy)
+                    .attr('font-size', 20)
+                    .attr('font-family', 'Karla') // TODO: font doesnt work
+                    .attr('text-anchor', 'middle')
+                    .attr('dominant-baseline', 'middle')
+                    .attr('fill', COLOR_COMMIT_NAME_TEXT)
+                    .html(commit.name);
+            }
+
+            // TODO: Hash if the option is enabled
         });
     });
 

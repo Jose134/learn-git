@@ -11,7 +11,8 @@ test1.svg
                     "name": "master",
                     "commits": [
                         {
-                            "hash": "asdf1"
+                            "hash": "asdf1",
+                            "name": "A"
                         },
                         {
                             "hash": "asdf2",
