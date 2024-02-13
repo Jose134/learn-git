@@ -17,6 +17,15 @@ This website serves as an interactive tutorial to help individuals grasp the ess
 
 This Git tutorial is hosted using GitHub Pages. Simply visit [Learn-Git](We don't have a link yet hehe) to start exploring and learning Git.
 
+## Running locally
+
+1. Install NodeJS (v20.9.0).
+2. \[Optional\] Install angular cli tools.
+3. Clone this repo.
+4. Install dependencies with `npm install`.
+5. Run `npm run gensvgs` to generate the Git diagrams.
+6. Run `npm start` to start your local server.
+
 ## Contributing
 
 Contributions to enhance this Git tutorial are welcome! You can contribute by:
