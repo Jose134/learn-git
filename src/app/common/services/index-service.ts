@@ -4,10 +4,11 @@ import { IndexEntry } from "../models/index-entry";
 @Injectable({providedIn: 'root'})
 export class IndexService {
 
-    index: IndexEntry[] = [
+    private readonly index: IndexEntry[] = [
         { route: 'solutiontest', filepath: 'assets/articles/solutiontest.md' },
         { route: 'index', filepath: 'assets/articles/index.md' },
         { route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md' },
+        { route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md' },
     ];
 
     getPreviousRoute(route: string): string | null {

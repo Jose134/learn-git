@@ -1,4 +1,5 @@
 import { MarkedOptions, MarkedRenderer } from "ngx-markdown";
+import { HighlightingService } from "./common/services/highlighting-service";
 
 export function markedOptionsCustom(): MarkedOptions {
 
@@ -39,7 +40,7 @@ export function markedOptionsCustom(): MarkedOptions {
             text = text.replace('SOLUTION\n', '');
         }
         
-        html += '<code' + addCss + '>' + text + '</code></pre></div>';
+        html += '<code' + addCss + '>' + HighlightingService.buildHTMLString(text) + '</code></pre></div>';
         return html;
     };
 
