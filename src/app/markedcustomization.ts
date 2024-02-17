@@ -40,7 +40,8 @@ export function markedOptionsCustom(): MarkedOptions {
             text = text.replace('SOLUTION\n', '');
         }
         
-        html += '<code' + addCss + '>' + HighlightingService.buildHTMLString(text) + '</code></pre></div>';
+        text = text.split('\n').map(HighlightingService.buildHTMLString).join('<br>');
+        html += '<code' + addCss + '>' + text + '</code></pre></div>';
         return html;
     };
 
