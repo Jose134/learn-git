@@ -4,6 +4,8 @@
     --var-text-primary: #fafaff;
     --var-text-link: #fafaff;
     --var-text-link-hover: #cacacc;
+    --var-color-syntax-command: orange;
+    --var-color-syntax-param: #444; 
 }
 
 html {

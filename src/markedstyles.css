@@ -55,11 +55,11 @@ pre {
 *************************************/
 
 .highlight-command {
-    color: orange;
+    color: var(--var-color-syntax-command);
 }
 
 .highlight-param {
-    color: #444;
+    color: var(--var-color-syntax-param);
 }
 
 /************************************

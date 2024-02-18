@@ -1,7 +1,7 @@
 export class HighlightingService {
 
     private static readonly keywords: [RegExp, string][] = [
-        [/git/, 'command'],
+        [/git|cd|cat|echo|mkdir|touch/, 'command'],
         [/-[-a-zA-Z]+/, 'param'],
     ];
 
