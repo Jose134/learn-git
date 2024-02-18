@@ -18,6 +18,7 @@
 .title-container h1 {
     margin: 0px;
     font-size: 3rem;
+    color: var(--var-color-nav-text-header);
 }
 
 .links-container {
@@ -29,10 +30,9 @@
 
 .links-container a {
     margin: 5px;
-    color: var(--var-text-link);
-    transition: color 100ms;
+    color: var(--var-color-nav-text-link);
 }
 
 .links-container a:hover {
-    color: var(--var-text-link-hover);
+    color: var(--var-color-nav-text-link-hover);
 }

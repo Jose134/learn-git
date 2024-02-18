@@ -83,15 +83,15 @@ pre {
 }
 
 .chip-beginner {
-    background-color: lime;
+    background-color: var(--var-color-chips-beginner);
 }
 
 .chip-intermediate {
-    background-color: orange;
+    background-color: var(--var-color-chips-intermediate);
 }
 
 .chip-advanced {
-    background-color: red;
+    background-color: var(--var-color-chips-advanced);
 }
 
 /************************************

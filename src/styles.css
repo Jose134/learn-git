@@ -1,16 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
+    /* PALETTE COLORS */
+    /*
+    --var-old-link-color: #bbe3ce;
+    */
+
+    /*
+    https://www.realtimecolors.com
+    --text: #e3e9fc;
+    --background: #01030a;
+    --primary: #7fa2f1;
+    --secondary: #561090;
+    --accent: #cd30e9;
+
+    --text: #fafaff;
+    --background: #0c0c0c;
+    --primary: #898ae8;
+    --secondary: #6e1983;
+    --accent: #de51d7;
+    */
+    
+    /*
+    --var-palette-1: #010038;
+    --var-palette-2: #293A80;
+    --var-palette-3: #537ec5;
+    --var-palette-4: #f39422;
+    */
+    /* 
+    --var-palette-1: #EEBA4B;
+    --var-palette-2: #6081EC;
+    --var-palette-3: #795AC0;
+    --var-palette-4: #C963C5;
+    --var-palette-5: #F476C3;
+    */
+    /*
+    --var-palette-1: #0d1821;
+    --var-palette-2: #ff2e00;
+    --var-palette-3: #00cecb;
+    --var-palette-4: #ffed66;
+    --var-palette-5: #fafaff;
+    */
+    --var-palette-1: #0c0c0c;
+    --var-palette-2: #907ad6;
+    --var-palette-3: #4f518c;
+    --var-palette-4: #d52941;
+    --var-palette-5: #fafaff;
+    
+
+    /* WEBSITE COLORS */
     --var-color-bg: #0c0c0c;
-    --var-text-primary: #fafaff;
-    --var-text-link: #fafaff;
-    --var-text-link-hover: #cacacc;
+    --var-color-text-header: #fafaff;
+    --var-color-text-primary: #fafaff;
+    --var-color-text-link: #bbe3ce;
+    --var-color-text-link-hover: #7ea390;
+    --var-color-nav-text-header: #fafaff;
+    --var-color-nav-text-link: #fafaff;
+    --var-color-nav-text-link-hover: #cacacc;
     --var-color-syntax-command: orange;
     --var-color-syntax-param: #444; 
+
+    --var-color-chips-beginner: lime;
+    --var-color-chips-intermediate: orange;
+    --var-color-chips-advanced: red;
+
+    --var-link-transition: color 100ms;
 }
 
 html {
     background-color: var(--var-color-bg);
-    color: var(--var-text-primary);
+    color: var(--var-color-text-primary);
     font-size: 1.2em;
 }
 
@@ -21,9 +79,19 @@ body {
 
 h1 {
     font-family: Kanit;
+    color: var(--var-color-text-header);
+}
+
+h2 {
+    font-family: Kanit;
+    color: var(--var-color-text-header);
 }
 
 a {
-    color: #bbe3ce;
-    /* color: #63b9d9; */
+    color: var(--var-color-text-link);
+    transition: var(--var-link-transition);
+}
+
+a:hover {
+    color: var(--var-color-text-link-hover);
 }
