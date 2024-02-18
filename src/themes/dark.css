@@ -1,0 +1,24 @@
+:root {
+    /* WEBSITE COLORS */
+    --var-color-bg: #0c0c0c;
+    --var-color-bg-header: black;
+    --var-color-bg-lighter: #151515;
+    --var-color-bg-border: #2a2a2a;
+    --var-color-text-header: #fafaff;
+    --var-color-text-primary: #fafaff;
+    --var-color-text-link: #bbe3ce;
+    --var-color-text-link-hover: #7ea390;
+    --var-color-nav-text-header: #fafaff;
+    --var-color-nav-text-link: #fafaff;
+    --var-color-nav-text-link-hover: #cacacc;
+    --var-color-syntax-command: #bde038;
+    --var-color-syntax-param: #444; 
+
+    --var-color-chips-text: black;
+    --var-color-chips-default: white;
+    --var-color-chips-beginner: lime;
+    --var-color-chips-intermediate: orange;
+    --var-color-chips-advanced: red;
+
+    --var-link-transition: color 100ms;
+}

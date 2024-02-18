@@ -7,13 +7,13 @@
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    background-color: #151515;
+    background-color: var(--var-color-bg-lighter);
     border-radius: 10px;
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--var-color-bg-border);
 }
 
 .rel-nav-link {
-    color: white;
+    color: var(--var-color-nav-text-link);
     text-decoration: none;
     margin-left: 20px;
     margin-right: 20px;
@@ -47,7 +47,7 @@
     display: inline-flex;
     width: 100%;
     align-items: center;
-    color: white;
+    color: var(--var-color-text-primary);
     text-decoration: none;
     margin-top: 10px;
 }
@@ -55,7 +55,7 @@
 .author-avatar {
     width: 40px;
     height: 40px;
-    border: solid 2px #2a2a2a;
+    border: solid 2px var(--var-color-bg-border);
     border-radius: 50%;
     margin-right: 10px;
 }

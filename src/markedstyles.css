@@ -72,8 +72,8 @@ pre {
     user-select: none;
     font-size: 14px;
     font-weight: 500;
-    color: black;
-    background-color: white;
+    color: var(--var-color-chips-text);
+    background-color: var(--var-color-chips-default);
 
     line-height: 20px;
     border-radius: 40px;
@@ -83,15 +83,15 @@ pre {
 }
 
 .chip-beginner {
-    background-color: lime;
+    background-color: var(--var-color-chips-beginner);
 }
 
 .chip-intermediate {
-    background-color: orange;
+    background-color: var(--var-color-chips-intermediate);
 }
 
 .chip-advanced {
-    background-color: red;
+    background-color: var(--var-color-chips-advanced);
 }
 
 /************************************
