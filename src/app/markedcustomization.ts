@@ -3,7 +3,7 @@ import { HighlightingService } from "./common/services/highlighting-service";
 
 export function markedOptionsCustom(): MarkedOptions {
 
-    const GITHUB_AVATAR_URL = 'https://avatars.githubusercontent.com/u/12801876';
+    const GITHUB_AVATAR_REGEX = /https\:\/\/avatars\.githubusercontent\.com\/u\/\d+/;
 
     const renderer = new MarkedRenderer();
     
@@ -48,7 +48,7 @@ export function markedOptionsCustom(): MarkedOptions {
     const rendererImage = renderer.image;
     renderer.image = (href: string, title: string | null, text: string) => {
         // Customization to apply custom styling to avatar image
-        if (href === GITHUB_AVATAR_URL) {
+        if (GITHUB_AVATAR_REGEX.test(href)) {
             return `<img class="avatar-img" src="${href}" alt="${text}">${title ?? ''}</img>`;
         }
         return rendererImage(href, title, text);
