@@ -1,5 +1,17 @@
 <app-post-reader [src]="this.articleFile"></app-post-reader>
 
+
+<div *ngIf="this.author && this.author.trim() !== ''" class="author-container">
+    <hr/>
+    <span>Written by:</span>
+    <a  [href]="'https://github.com/'+this.author"
+        target="_blank"
+        class="author-link">
+        <img class="author-avatar" [src]="'https://avatars.githubusercontent.com/' + this.author" />
+        {{this.author}}
+    </a>
+</div>
+
 <div *ngIf="this.previousRoute || this.nextRoute" class="relative-navigation-container">
     <div>
         <a  *ngIf="this.previousRoute"

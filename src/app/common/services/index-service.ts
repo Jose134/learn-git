@@ -5,9 +5,9 @@ import { IndexEntry } from "../models/index-entry";
 export class IndexService {
 
     private readonly index: IndexEntry[] = [
-        { route: 'solutiontest', filepath: 'assets/articles/solutiontest.md' },
+        { route: 'solutiontest', filepath: 'assets/articles/solutiontest.md', author: 'Jose134' },
         { route: 'index', filepath: 'assets/articles/index.md' },
-        { route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md' },
+        { route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md', author: ' '},
         { route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md' },
     ];
 
@@ -29,6 +29,10 @@ export class IndexService {
 
     getFilePath(route: string): string | null {
         return this.index.find(entry => entry.route === route)?.filepath ?? null;
+    }
+
+    getAuthor(route: string): string | null {
+        return this.index.find(entry => entry.route === route)?.author ?? null;
     }
     
 }

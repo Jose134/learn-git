@@ -34,3 +34,28 @@
 .rel-nav-link-next:hover::after {
     margin-left: 10px;
 }
+
+.author-container {
+    width: 100%;
+}
+
+.author-container span {
+    font-size: 0.8em;
+}
+
+.author-link {
+    display: inline-flex;
+    width: 100%;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.author-avatar {
+    width: 40px;
+    height: 40px;
+    border: solid 2px #2a2a2a;
+    border-radius: 50%;
+    margin-right: 10px;
+}
