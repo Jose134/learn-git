@@ -15,14 +15,14 @@
 <div *ngIf="this.previousRoute || this.nextRoute" class="relative-navigation-container">
     <div>
         <a  *ngIf="this.previousRoute"
-            [href]="'article/'+this.previousRoute"
+            [routerLink]="'/article/'+this.previousRoute"
             class="rel-nav-link rel-nav-link-prev">
             Previous
         </a>
     </div>
     <div>
         <a  *ngIf="this.nextRoute"
-            [href]="'article/'+this.nextRoute"
+            [routerLink]="'/article/'+this.nextRoute"
             class="rel-nav-link rel-nav-link-next">
             Next
         </a>

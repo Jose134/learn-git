@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PostReaderComponent } from '../../common/components/post-reader/post-reader.component';
 import { CommonModule } from '@angular/common';
 import { IndexService } from '../../common/services/index-service';
@@ -7,7 +7,7 @@ import { IndexService } from '../../common/services/index-service';
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [PostReaderComponent, CommonModule],
+  imports: [RouterLink, PostReaderComponent, CommonModule],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
@@ -21,6 +21,12 @@ export class ArticleComponent implements OnInit {
   constructor(private route: ActivatedRoute, private indexService: IndexService) {}
   
   ngOnInit(): void {
+    this.route.params.subscribe(() => {
+      this.updateArticle();
+    });
+  }
+
+  private updateArticle() {
     let articleName = this.route.snapshot.params['name'];
     this.previousRoute = this.indexService.getPreviousRoute(articleName);
     this.nextRoute = this.indexService.getNextRoute(articleName);

@@ -1,8 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-import { MarkdownComponent } from 'ngx-markdown';
-import { HttpClient } from '@angular/common/http';
 import { NavbarComponent } from './common/components/navbar/navbar.component';
 
 @Component({
