@@ -1,4 +1,4 @@
-:root {
+[data-theme="dark"] {
     /* WEBSITE COLORS */
     --var-color-bg: #0c0c0c;
     --var-color-bg-header: black;
@@ -12,7 +12,9 @@
     --var-color-nav-text-link: #fafaff;
     --var-color-nav-text-link-hover: #cacacc;
     --var-color-syntax-command: #bde038;
-    --var-color-syntax-param: #444; 
+    --var-color-syntax-param: #444444; 
+    --var-color-codeblock-background: #222222; 
+    --var-color-codeblock-border: #444444; 
 
     --var-color-chips-text: black;
     --var-color-chips-default: white;

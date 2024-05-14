@@ -36,3 +36,26 @@
 .links-container a:hover {
     color: var(--var-color-nav-text-link-hover);
 }
+
+.github-icon {
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+}
+
+.theme-icon {
+    margin-left: 10px;
+    width: 35px;
+    height: 35px;
+
+    transition: transform 100ms;
+}
+
+.theme-icon:hover {
+    cursor: pointer;
+    transform: rotate(30deg);
+}
+
+.theme-icon-dark {
+    filter: invert();
+}

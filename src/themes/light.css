@@ -1,0 +1,26 @@
+[data-theme="light"] {
+    /* WEBSITE COLORS */
+    --var-color-bg: white;
+    --var-color-bg-header: #cdcedd;
+    --var-color-bg-lighter: #cdcedd;
+    --var-color-bg-border: #444444;
+    --var-color-text-header: #0c0c0c;
+    --var-color-text-primary: #0c0c0c;
+    --var-color-text-link: #dd6026;
+    --var-color-text-link-hover: #b14d1e;
+    --var-color-nav-text-header: #0c0c0c;
+    --var-color-nav-text-link: #0c0c0c;
+    --var-color-nav-text-link-hover: #242424;
+    --var-color-syntax-command: #ff6600;
+    --var-color-syntax-param: #444444; 
+    --var-color-codeblock-background: #cdcedd; 
+    --var-color-codeblock-border: #444444; 
+
+    --var-color-chips-text: black;
+    --var-color-chips-default: white;
+    --var-color-chips-beginner: lime;
+    --var-color-chips-intermediate: orange;
+    --var-color-chips-advanced: red;
+
+    --var-link-transition: color 100ms;
+}

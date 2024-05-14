@@ -1,13 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'themes/dark.css';
+@import 'themes/light.css';
+
+* {
+    transition: background-color 125ms, color 125ms;
+}
 
 html {
-    background-color: var(--var-color-bg);
-    color: var(--var-color-text-primary);
     font-size: 1.2em;
 }
 
 body {
+    background-color: var(--var-color-bg);
+    color: var(--var-color-text-primary);
     font-family: Karla;
     margin: 0;
 }

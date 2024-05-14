@@ -1,13 +1,21 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   standalone: true,
-  imports: [RouterLink],
+  imports: [RouterLink, NgIf],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
 })
 export class NavbarComponent {
+
+  darkTheme: boolean = true;
+
+  switchTheme() {
+    this.darkTheme = !this.darkTheme;
+    document.body.setAttribute("data-theme", this.darkTheme ? "dark" : "light");
+  }
 
 }

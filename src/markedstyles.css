@@ -8,8 +8,8 @@
 }
 
 pre {
-    background: #222;
-    border-left: 8px solid #444;
+    background: var(--var-color-codeblock-background);
+    border-left: 8px solid var(--var-color-codeblock-border);
     padding: 5px;
 }
 
