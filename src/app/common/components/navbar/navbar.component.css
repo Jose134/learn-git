@@ -9,6 +9,8 @@
 
     background-color: var(--var-color-bg-header);
     border-bottom: 1px solid var(--var-color-bg-border);
+
+    z-index: 1000;
 }
 
 .title-container {
