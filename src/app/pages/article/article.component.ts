@@ -34,4 +34,8 @@ export class ArticleComponent implements OnInit {
     this.author = this.indexService.getAuthor(articleName);
   }
 
+  scrollTop() {
+    document.documentElement.scrollTop = 0;
+  }
+
 }

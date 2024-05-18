@@ -16,6 +16,7 @@
     <div>
         <a  *ngIf="this.previousRoute"
             [routerLink]="'/article/'+this.previousRoute"
+            (click)="this.scrollTop()"
             class="rel-nav-link rel-nav-link-prev">
             Previous
         </a>
@@ -23,6 +24,7 @@
     <div>
         <a  *ngIf="this.nextRoute"
             [routerLink]="'/article/'+this.nextRoute"
+            (click)="this.scrollTop()"
             class="rel-nav-link rel-nav-link-next">
             Next
         </a>
