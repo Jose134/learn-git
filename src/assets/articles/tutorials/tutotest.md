@@ -1,7 +1,6 @@
 asdfasdf
 
-GIT-SVG
-test1.svg
+GIT-GRAPH
 {
     "repositories": [
         {
@@ -50,8 +49,7 @@ test1.svg
     ]
 }
 
-GIT-SVG
-test2.svg
+GIT-GRAPH
 {
     "repositories": [
         {
