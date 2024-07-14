@@ -1,0 +1,17 @@
+<remark [markdown]="this.markdown" [processor]="this.processor">
+    <ng-template remarkTemplate="github-avatar" let-node>
+        <app-github-avatar [src]="node.url"></app-github-avatar>
+    </ng-template>
+    <ng-template remarkTemplate="solution-codeblock" let-node>
+        <app-codeblock [code]="node.value" [isSolution]="true"></app-codeblock>
+    </ng-template>
+    <ng-template remarkTemplate="code" let-node>
+        <app-codeblock [code]="node.value" [isSolution]="false"></app-codeblock>
+    </ng-template>
+    <ng-template remarkTemplate="chips" let-node>
+        <app-chips [chips]="node.chips"></app-chips>
+    </ng-template>
+    <ng-template remarkTemplate="git-graph" let-node>
+        <app-git-graph [src]="node.src"></app-git-graph>
+    </ng-template>
+</remark>

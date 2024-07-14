@@ -25,8 +25,7 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "src/markedstyles.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "server": "src/main.server.ts",

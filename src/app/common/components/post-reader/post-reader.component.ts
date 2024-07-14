@@ -1,41 +1,39 @@
 import { CommonModule, NgIf } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { Component, Input, OnInit } from '@angular/core';
-import { MarkdownComponent } from 'ngx-markdown';
-import { Observable, catchError, map, of } from 'rxjs';
+import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { MarkdownComponent } from '../markdown/markdown.component';
+import { FileLoaderService } from '../../services/file-loader-service';
 
 @Component({
   selector: 'app-post-reader',
   standalone: true,
-  imports: [MarkdownComponent, CommonModule],
+  imports: [CommonModule, MarkdownComponent],
   templateUrl: './post-reader.component.html',
   styleUrl: './post-reader.component.css'
 })
-export class PostReaderComponent implements OnInit {
+export class PostReaderComponent implements OnInit, OnChanges {
   
   @Input({required: true}) src: string | null = null;
-  fileExists: boolean = false;
+  fileContent: string | null = null;
 
-  constructor(private http: HttpClient) {}
+  constructor(private fileLoaderService: FileLoaderService) {}
 
   ngOnInit(): void {
+    this.loadFileContent();
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes['src'] && !changes['src'].isFirstChange()) {
+      this.loadFileContent();
+    }
+  }
+
+  loadFileContent(): void {
     if (this.src) {
-      this.checkFileExists(this.src).subscribe((res: boolean) => {
-        this.fileExists = res;
+      this.fileLoaderService.getFileContents(this.src).subscribe((res: string | null) => {
+        this.fileContent = res;
       });
     }
   }
 
-  checkFileExists(url: string): Observable<boolean> {
-    return this.http.get(url, { responseType: 'blob' })
-    .pipe(
-        map(response => {
-            return true;
-        }),
-        catchError(error => {
-            return of(false);
-        })
-    );
-  }
 
 }
