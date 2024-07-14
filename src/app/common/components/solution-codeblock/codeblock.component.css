@@ -1,0 +1,49 @@
+.codeblock {
+    /* Needed to place Hover text on top of solutions */
+    position: relative;
+}
+
+pre {
+    background: var(--var-color-codeblock-background);
+    border-left: 8px solid var(--var-color-codeblock-border);
+    padding: 5px;
+    white-space: nowrap;
+}
+
+code {
+    white-space: pre-wrap;
+}
+
+.hover-instructions {
+    /* Place on top of the codeblock */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    /* Center the text */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.code-blur {
+    /* Blur the text */
+    filter: blur(10px);
+    transition: filter 150ms;
+}
+
+
+/* TODO: Reincorporate these styles after remark migration */
+/* SYNTAX HIGHLIGHTING */
+
+.highlight-command {
+    color: var(--var-color-syntax-command);
+}
+
+.highlight-param {
+    color: var(--var-color-syntax-param);
+}
