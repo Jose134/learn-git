@@ -8,7 +8,6 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "gensvgs": "node src/genSvgScript/genSvg.js",
     "serve:ssr:learn-git": "node dist/learn-git/server/server.mjs"
   },
   "private": true,

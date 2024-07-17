@@ -23,7 +23,6 @@ This Git tutorial is hosted using GitHub Pages. Simply visit [Learn-Git](We don'
 2. \[Optional\] Install angular cli tools.
 3. Clone this repo.
 4. Install dependencies with `npm install`.
-5. Run `npm run gensvgs` to generate the Git diagrams.
 6. Run `npm start` to start your local server.
 
 ## Contributing
