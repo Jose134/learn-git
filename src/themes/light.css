@@ -22,5 +22,19 @@
     --var-color-chips-intermediate: orange;
     --var-color-chips-advanced: red;
 
+    /* GIT GRAPH */
+    --var-color-graph-bg: #cdcedd;
+    --var-color-graph-branch-text: #0c0c0c;
+    --var-color-graph-branch-line: #ff0000;
+    --var-color-graph-commit-text: #0c0c0c;
+    --var-color-graph-commit-circle: #ffffff;
+    --var-color-graph-commit-circle-stroke: #000000;
+    --var-color-graph-link: #000000;
+
+    --var-graph-commit-circle-stroke-width: 3px;
+    --var-graph-link-stroke-width: 3px;
+    --var-graph-branch-line-stroke-width: 2px;
+    --var-graph-branch-line-stroke-dasharray: 10;
+
     --var-link-transition: color 100ms;
 }
