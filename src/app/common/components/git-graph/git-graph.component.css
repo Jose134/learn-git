@@ -1,0 +1,28 @@
+.graph-container {
+    fill: var(--var-color-graph-bg);
+}
+
+.branch-line {
+    stroke: var(--var-color-graph-branch-line);
+    stroke-width: var(--var-graph-branch-line-stroke-width);
+    stroke-dasharray: var(--var-graph-branch-line-stroke-dasharray);
+}
+
+.branch-text {
+    fill: var(--var-color-graph-branch-text);
+}
+
+.commit-circle {
+    fill: var(--var-color-graph-commit-circle);
+    stroke: var(--var-color-graph-commit-circle-stroke);
+    stroke-width: var(--var-graph-commit-circle-stroke-width);
+}
+
+.commit-text {
+    fill: var(--var-color-graph-commit-text);
+}
+
+.link {
+    stroke: var(--var-color-graph-link);
+    stroke-width: var(--var-graph-link-stroke-width);
+}

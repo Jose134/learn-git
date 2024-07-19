@@ -3,7 +3,7 @@
 @import 'themes/light.css';
 
 * {
-    transition: background-color 125ms, color 125ms;
+    transition: background-color 125ms, color 125ms, fill 125ms;
 }
 
 html {

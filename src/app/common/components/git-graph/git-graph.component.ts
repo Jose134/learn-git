@@ -23,16 +23,7 @@ interface CommitTreeNode {
 })
 export class GitGraphComponent implements OnInit {
 
-  readonly COLOR_COMMIT_FILL: string = '#000000';
-  readonly COLOR_COMMIT_STROKE: string = '#ffffff';
-  readonly COLOR_COMMIT_NAME_TEXT: string = '#ffffff';
-  readonly COLOR_COMMIT_LINK_STROKE: string = '#ffffff';
-  readonly COLOR_BRANCH_STROKE: string = '#bbe3ce';
-  readonly COLOR_BRANCH_NAME_TEXT: string = '#ffffff';
-
   readonly COMMIT_RADIUS = 30;
-  readonly COMMIT_STROKE = 5;
-  readonly COMMIT_LINK_STROKE = 3;
   readonly BRANCH_HEIGHT = 70;
   readonly BRANCH_LINE_PERCENT_X1 = 20;
   readonly BRANCH_LINE_PERCENT_X2 = 90;
