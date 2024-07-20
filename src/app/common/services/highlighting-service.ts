@@ -1,27 +1,25 @@
+import { CodeHighlight, CodeHighlightType } from "../models/code-highlight";
+
 export class HighlightingService {
 
     private static readonly keywords: [RegExp, string][] = [
-        [/git|cd|cat|echo|mkdir|touch|sudo|apt|apt-get/, 'command'],
-        [/-[-a-zA-Z]+/, 'param'],
+        [/git|cd|cat|echo|mkdir|touch|sudo|apt|apt-get/, CodeHighlightType.Command],
+        [/ [|&><] /, CodeHighlightType.Operator],
+        [/-[-a-zA-Z]+/, CodeHighlightType.Param],
+        [/\s+/, CodeHighlightType.WhiteSpace],
     ];
 
-    static buildHTMLString(text: string): string {
-        return text.replace(/[^\s]+/g, HighlightingService.buildHTMLWord)
-                   .replace(/(>(\s+)<)/g, (_, $1, $2) => '>' + '&nbsp;'.repeat($2.length) + '<');
+    static buildHighlighting(code: string): CodeHighlight[] {
+        return code.split(/(\s+)/).map(HighlightingService.buildHightlightingNode);
     }
 
-    private static buildHTMLWord(text: string): string {
-        let result: string = text;
-        let match: boolean = false;
+    private static buildHightlightingNode(text: string): CodeHighlight {
+        let result: CodeHighlight = { text: text, type: CodeHighlightType.Plain };
         HighlightingService.keywords.forEach(entry => {
             if (text.match(entry[0])) {
-                result = `<span class="highlight-${entry[1]}">${text}</span>`;
-                match = true;
+                result.type = entry[1] as CodeHighlightType;
             }
         });
-        if (!match) {
-            result = `<span class="highlight-plain">${text}</span>`;
-        }
         return result;
     }
     

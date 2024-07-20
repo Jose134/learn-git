@@ -1,13 +1,17 @@
 import { visit } from 'unist-util-visit';
+import { HighlightingService } from '../services/highlighting-service';
 
 function remarkCodeblock() {
 
   return (tree: any) => {
     visit(tree, "code", (node: any) => {
+      console.log(node.value);
       if (node.value.startsWith('SOLUTION')) {
         node.value = node.value.replace('SOLUTION\n', '');
-        node.type = 'solution-codeblock';
+        node.isSolution = true;
       }
+      
+      node.value = HighlightingService.buildHighlighting(node.value);
     });
   };
 }
