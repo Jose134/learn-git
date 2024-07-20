@@ -17,8 +17,9 @@ asdf
 owo
 
     git status
-    git add .
-    git commit -m "Hey"
+    # askdghkljsadghlkasd
+    git add .             # asdfhkjhasdkgf
+    git commit -m "Hey"   # ksajhgkdsaj
     git log --oneline
     git switch master
     git rebase feature

@@ -1,6 +1,11 @@
 <div class="codeblock">
     <pre (click)="this.toggleReveal()">
         <div *ngIf="this.isSolution && !this.isRevealed" class="hover-instructions">Hover to show the solution</div>
-        <code [class.code-blur]="this.isSolution && !this.isRevealed">{{this.code}}</code>
+        <code [class.code-blur]="this.isSolution && !this.isRevealed">
+            <span
+                *ngFor="let highlight of this.code"
+                [ngClass]="this.getHighlightClass(highlight.type)"
+            >{{highlight.text}}</span>
+        </code>
     </pre>
 </div>
