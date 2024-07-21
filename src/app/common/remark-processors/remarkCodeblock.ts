@@ -5,7 +5,6 @@ function remarkCodeblock() {
 
   return (tree: any) => {
     visit(tree, "code", (node: any) => {
-      console.log(node.value);
       if (node.value.startsWith('SOLUTION')) {
         node.value = node.value.replace('SOLUTION\n', '');
         node.isSolution = true;

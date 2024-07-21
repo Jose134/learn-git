@@ -1,12 +1,6 @@
 # Hey
 
-# CHIPS TEST 1:TEST 2
-
 asdf
-
-# CHIPS TEST 1:TEST 2
-# CHIPS TEST 1:TEST 2
-# CHIPS TEST 3:TEST 4:TEST 5
 
     SOLUTION
     git status

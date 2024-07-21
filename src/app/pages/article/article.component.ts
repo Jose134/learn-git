@@ -3,11 +3,13 @@ import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PostReaderComponent } from '../../common/components/post-reader/post-reader.component';
 import { CommonModule } from '@angular/common';
 import { IndexService } from '../../common/services/index-service';
+import { IndexEntry } from '../../common/models/index-entry';
+import { ChipsComponent } from "../../common/components/chips/chips.component";
 
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [RouterLink, PostReaderComponent, CommonModule],
+  imports: [RouterLink, PostReaderComponent, CommonModule, ChipsComponent],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })
@@ -15,8 +17,7 @@ export class ArticleComponent implements OnInit {
 
   previousRoute: string | null = null;
   nextRoute: string | null = null;
-  articleFile: string | null = null;
-  author: string | null = null;
+  article: IndexEntry | null = null;
 
   constructor(private route: ActivatedRoute, private indexService: IndexService) {}
   
@@ -30,8 +31,7 @@ export class ArticleComponent implements OnInit {
     let articleName = this.route.snapshot.params['name'];
     this.previousRoute = this.indexService.getPreviousRoute(articleName);
     this.nextRoute = this.indexService.getNextRoute(articleName);
-    this.articleFile = this.indexService.getFilePath(articleName);
-    this.author = this.indexService.getAuthor(articleName);
+    this.article = this.indexService.getEntryInfo(articleName);
   }
 
   scrollTop() {
