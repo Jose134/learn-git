@@ -1,14 +1,17 @@
-<app-post-reader [src]="this.articleFile"></app-post-reader>
+<div id="chips-container">
+    <app-chips *ngIf="this.article?.tags?.length ?? 0 > 0" [chips]="this.article?.tags ?? []"></app-chips>
+</div>
 
+<app-post-reader [src]="this.article?.filepath ?? null"></app-post-reader>
 
-<div *ngIf="this.author && this.author.trim() !== ''" class="author-container">
+<div *ngIf="this.article?.author && this.article?.author?.trim() !== ''" class="author-container">
     <hr/>
     <span>Written by:</span>
-    <a  [href]="'https://github.com/'+this.author"
+    <a  [href]="'https://github.com/'+this.article?.author"
         target="_blank"
         class="author-link">
-        <img class="author-avatar" [src]="'https://avatars.githubusercontent.com/' + this.author" />
-        {{this.author}}
+        <img class="author-avatar" [src]="'https://avatars.githubusercontent.com/' + this.article?.author" />
+        {{this.article?.author}}
     </a>
 </div>
 

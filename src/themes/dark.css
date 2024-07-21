@@ -16,8 +16,9 @@
     --var-color-codeblock-background: #222222; 
     --var-color-codeblock-border: #444444; 
 
-    --var-color-chips-text: black;
-    --var-color-chips-default: white;
+    --var-color-chips-text: white;
+    --var-color-chips-border: white;
+    --var-color-chips-default: rgba(255, 255, 255, 0.1);
     --var-color-chips-beginner: lime;
     --var-color-chips-intermediate: orange;
     --var-color-chips-advanced: red;

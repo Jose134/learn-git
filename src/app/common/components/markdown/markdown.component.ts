@@ -3,7 +3,6 @@ import { RemarkModule, RemarkTemplateDirective } from 'ngx-remark';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkCodeblock from '../../remark-processors/remarkCodeblock';
-import remarkChips from '../../remark-processors/remarkChip';
 import remarkGitGraph from '../../remark-processors/remarkGitGraph';
 import remarkGHAvatar from '../../remark-processors/remarkGHAvatar';
 import { GithubAvatarComponent } from '../github-avatar/github-avatar.component';
@@ -22,7 +21,6 @@ export class MarkdownComponent {
   @Input({required: true}) markdown: string = '';
   processor = unified()
       .use(remarkParse)
-      .use(remarkChips)
       .use(remarkCodeblock)
       .use(remarkGHAvatar)
       .use(remarkGitGraph);

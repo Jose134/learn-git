@@ -7,8 +7,8 @@ export class IndexService {
     private readonly index: IndexEntry[] = [
         { route: 'solutiontest', filepath: 'assets/articles/solutiontest.md', author: 'Jose134' },
         { route: 'index', filepath: 'assets/articles/index.md' },
-        { route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md', author: ' '},
-        { route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md' },
+        { route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md', author: ' ', tags: ['beginner', 'test'] },
+        { route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
     ];
 
     getPreviousRoute(route: string): string | null {
@@ -27,12 +27,8 @@ export class IndexService {
         return null;
     }
 
-    getFilePath(route: string): string | null {
-        return this.index.find(entry => entry.route === route)?.filepath ?? null;
-    }
-
-    getAuthor(route: string): string | null {
-        return this.index.find(entry => entry.route === route)?.author ?? null;
+    getEntryInfo(route: string): IndexEntry | null {
+        return this.index.find(entry => entry.route === route) ?? null;
     }
     
 }
