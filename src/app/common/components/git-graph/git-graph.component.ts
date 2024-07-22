@@ -41,7 +41,7 @@ export class GitGraphComponent implements OnInit {
   private buildRenderGraph(graph: GitGraph): RenderGraph {
     let renderGraph: RenderGraph = { repositories: [] };
 
-    graph.repositories.forEach((repo: Repository) => {
+    graph.repositories?.forEach((repo: Repository) => {
       renderGraph.repositories.push(this.buildRenderRepository(repo));
     });
 

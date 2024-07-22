@@ -6,6 +6,16 @@
         <app-codeblock [code]="node.value" [isSolution]="node.isSolution"></app-codeblock>
     </ng-template>
     <ng-template remarkTemplate="git-graph" let-node>
-        <app-git-graph [graph]="node.graph"></app-git-graph>
+        <ng-container *ngIf="node.graph.valid; else graphError">
+            <app-git-graph [graph]="node.graph"></app-git-graph>
+        </ng-container>
+        <ng-template #graphError>
+            <div class="error-container">
+                Error parsing git graph:
+                <ul>
+                    <li *ngFor="let error of node.graph.errors">{{ error }}</li>
+                </ul>
+            </div>
+        </ng-template>
     </ng-template>
 </remark>

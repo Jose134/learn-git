@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { NgFor, NgIf } from '@angular/common';
 import { RemarkModule, RemarkTemplateDirective } from 'ngx-remark';
 import { unified } from 'unified';
 import remarkParse from 'remark-parse';
@@ -13,7 +14,7 @@ import { GitGraphComponent } from '../git-graph/git-graph.component';
 @Component({
   selector: 'app-markdown',
   standalone: true,
-  imports: [RemarkModule, ChipsComponent, CodeblockComponent, GithubAvatarComponent, GitGraphComponent],
+  imports: [NgIf, NgFor, RemarkModule, ChipsComponent, CodeblockComponent, GithubAvatarComponent, GitGraphComponent],
   templateUrl: './markdown.component.html',
   styleUrl: './markdown.component.css'
 })
@@ -24,4 +25,5 @@ export class MarkdownComponent {
       .use(remarkCodeblock)
       .use(remarkGHAvatar)
       .use(remarkGitGraph);
+
 }
