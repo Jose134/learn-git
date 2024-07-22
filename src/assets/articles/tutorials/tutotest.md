@@ -73,3 +73,48 @@ GIT-GRAPH
         }
     ]
 }
+
+GIT-GRAPH
+{
+    "repositories": [
+        {
+            "name": "test repo",
+            "branches": [
+                {
+                    "name": "master",
+                    "commits": [
+                        {
+                            "hash": "asdf1"
+                        },
+                        {
+                            "hash": "asdf2",
+                            "parents": [ "asdf1" ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+
+GIT-GRAPH
+{
+    "repositories": [
+        {
+            "name": "test repo",
+            "branches": [
+                {
+                    "name": "master",
+                    "commits": [
+                        {
+                            "name": "B"
+                        },
+                        {
+                            "hash": "asdf2",
+                            "parents": [ "asdf1" ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

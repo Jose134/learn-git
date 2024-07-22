@@ -15,5 +15,7 @@ export interface Branch {
 }
 
 export interface GitGraph {
-    repositories: Repository[]
+    repositories?: Repository[],
+    valid: boolean,
+    errors?: string[],
 }

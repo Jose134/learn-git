@@ -37,5 +37,9 @@
     --var-graph-branch-line-stroke-width: 2px;
     --var-graph-branch-line-stroke-dasharray: 10;
 
+    /* ERROR CONTAINER */
+    --var-color-error-container-bg: rgba(255, 0, 0, 0.1);
+    --var-color-error-container-border: red;
+
     --var-link-transition: color 100ms;
 }
