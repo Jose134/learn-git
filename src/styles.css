@@ -41,3 +41,9 @@ hr {
     margin-top: 50px;
     margin-bottom: 25px;
 }
+
+/* NOTE: Fix issue with list margin */
+remark li > p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
