@@ -1,0 +1,20 @@
+<h1>Welcome!</h1>
+
+Ready to start your git journey? Trying to find an explanation for a part of git you don't know? Looking for that specific command? Whatever it is you're doing here you are welcome to stay :)
+
+<h2>Index</h2>
+
+<p>⚠️ Section under construction ⚠️</p>
+
+<ng-template #recursiveList let-list="list">
+    <li *ngFor="let node of list">
+        <a [href]="'/article/' + node?.value?.route">{{node?.value?.title}}</a>
+        <ol *ngIf="node?.children && node.children.length > 0">
+            <ng-container *ngTemplateOutlet="recursiveList; context:{ list: node.children }"></ng-container>
+        </ol>
+    </li>
+</ng-template>
+
+<ol id="index-root">
+    <ng-container *ngTemplateOutlet="recursiveList; context:{ list: this.index }"></ng-container>
+</ol>
