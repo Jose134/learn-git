@@ -5,10 +5,20 @@ import { IndexEntry } from "../models/index-entry";
 export class IndexService {
 
     private readonly index: IndexEntry[] = [
-        { route: 'solutiontest', filepath: 'assets/articles/solutiontest.md', author: 'Jose134' },
-        { route: 'index', filepath: 'assets/articles/index.md' },
-        { route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md', author: ' ', tags: ['beginner', 'test'] },
-        { route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 0, title: 'Solution Test', route: 'solutiontest', filepath: 'assets/articles/solutiontest.md', author: 'Jose134' },
+        { level: 0, title: 'Tuto test', route: 'tutotest', filepath: 'assets/articles/tutorials/tutotest.md', author: ' ', tags: ['beginner', 'test'] },
+        { level: 1, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 1, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 1, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 2, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 2, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 0, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 1, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 2, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 1, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 2, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 2, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
+        { level: 2, title: 'Highlighting Test', route: 'highlightingtest', filepath: 'assets/articles/tutorials/highlightingtest.md', tags: ['beginner'] },
     ];
 
     getPreviousRoute(route: string): string | null {
@@ -29,6 +39,19 @@ export class IndexService {
 
     getEntryInfo(route: string): IndexEntry | null {
         return this.index.find(entry => entry.route === route) ?? null;
+    }
+
+    getAllEntries(): IndexEntry[] {
+        let indexView: IndexEntry[] = [];
+        this.index.forEach(entry => {
+            indexView.push({
+                level: entry.level,
+                title: entry.title,
+                route: entry.route,
+                filepath: entry.filepath,
+            });
+        });
+        return indexView;
     }
     
 }
