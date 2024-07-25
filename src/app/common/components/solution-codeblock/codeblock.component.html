@@ -4,11 +4,7 @@
             <div class="hover-instructions">Click to show the solution</div>
         }
         <code [class.code-blur]="this.isSolution && !this.isRevealed">
-            @for (highlight of this.code; track highlight) {
-                <span
-                    [ngClass]="this.getHighlightClass(highlight.type)"
-                >{{highlight.text}}</span>
-            }
+            <span *ngFor="let highlight of this.code" [ngClass]="this.getHighlightClass(highlight.type)">{{highlight.text}}</span>
         </code>
     </pre>
 </div>
