@@ -7,12 +7,16 @@ Ready to start your git journey? Trying to find an explanation for a part of git
 <p>⚠️ Section under construction ⚠️</p>
 
 <ng-template #recursiveList let-list="list">
-    <li *ngFor="let node of list">
-        <a [href]="'/article/' + node?.value?.route">{{node?.value?.title}}</a>
-        <ol *ngIf="node?.children && node.children.length > 0">
-            <ng-container *ngTemplateOutlet="recursiveList; context:{ list: node.children }"></ng-container>
-        </ol>
-    </li>
+    @for (node of list; track node) {
+        <li>
+            <a [href]="'/article/' + node?.value?.route">{{node?.value?.title}}</a>
+            @if (node?.children && node.children.length > 0) {
+                <ol>
+                    <ng-container *ngTemplateOutlet="recursiveList; context:{ list: node.children }"></ng-container>
+                </ol>
+            }
+        </li>
+    }
 </ng-template>
 
 <ol id="index-root">

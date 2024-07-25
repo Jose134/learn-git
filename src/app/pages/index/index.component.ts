@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IndexEntry } from '../../common/models/index-entry';
 import { IndexService } from '../../common/services/index-service';
-import { NgFor, NgIf, NgTemplateOutlet } from '@angular/common';
+import { NgTemplateOutlet } from '@angular/common';
 
 interface IndexListNode {
   value: IndexEntry;
@@ -11,7 +11,7 @@ interface IndexListNode {
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [NgIf, NgFor, NgTemplateOutlet],
+  imports: [NgTemplateOutlet],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })

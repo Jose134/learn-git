@@ -1,10 +1,10 @@
-import { NgFor, NgIf } from '@angular/common';
+
 import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chips',
   standalone: true,
-  imports: [NgIf, NgFor],
+  imports: [],
   templateUrl: './chips.component.html',
   styleUrl: './chips.component.css'
 })

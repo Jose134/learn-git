@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { PostReaderComponent } from '../../common/components/post-reader/post-reader.component';
-import { CommonModule } from '@angular/common';
+
 import { IndexService } from '../../common/services/index-service';
 import { IndexEntry } from '../../common/models/index-entry';
 import { ChipsComponent } from "../../common/components/chips/chips.component";
@@ -9,7 +9,7 @@ import { ChipsComponent } from "../../common/components/chips/chips.component";
 @Component({
   selector: 'app-article',
   standalone: true,
-  imports: [RouterLink, PostReaderComponent, CommonModule, ChipsComponent],
+  imports: [RouterLink, PostReaderComponent, ChipsComponent],
   templateUrl: './article.component.html',
   styleUrl: './article.component.css'
 })

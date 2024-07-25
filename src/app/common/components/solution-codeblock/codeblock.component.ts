@@ -1,11 +1,11 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { CodeHighlight, CodeHighlightType } from '../../models/code-highlight';
 
 @Component({
   selector: 'app-codeblock',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgClass],
   templateUrl: './codeblock.component.html',
   styleUrl: './codeblock.component.css'
 })

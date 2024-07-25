@@ -1,27 +1,39 @@
-<svg *ngIf="this.renderGraph !== null" viewBox="0 0 1000 180" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+@if (this.renderGraph !== null) {
+<svg viewBox="0 0 1000 180" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&amp;display=swap');
     </style>
     <rect width="100%" height="100%" rx="12" class="graph-container"></rect>
-    <g *ngFor="let repo of this.renderGraph.repositories">
-        <g *ngFor="let branch of repo.branches">
-            <text x="180" [attr.y]="branch.lineY" font-size="20" font-family="Karla" text-anchor="end"
-                dominant-baseline="middle" class="branch-text"> {{ branch.name }} </text>
-            <line [attr.x1]="this.BRANCH_LINE_PERCENT_X1 + '%'" [attr.y1]="branch.lineY"
-                [attr.x2]="this.BRANCH_LINE_PERCENT_X2 + '%'" [attr.y2]="branch.lineY"
-                class="branch-line"></line>
+    @for (repo of this.renderGraph.repositories; track repo) {
+        <g>
+            @for (branch of repo.branches; track branch) {
+                <g>
+                    <text x="180" [attr.y]="branch.lineY" font-size="20" font-family="Karla" text-anchor="end"
+                        dominant-baseline="middle" class="branch-text"> {{ branch.name }} </text>
+                    <line [attr.x1]="this.BRANCH_LINE_PERCENT_X1 + '%'" [attr.y1]="branch.lineY"
+                        [attr.x2]="this.BRANCH_LINE_PERCENT_X2 + '%'" [attr.y2]="branch.lineY"
+                        class="branch-line"></line>
+                </g>
+            }
+        <g>
+            @for (link of repo.links; track link) {
+                <line [attr.x1]="link.x1"
+                    [attr.y1]="link.y1" [attr.x2]="link.x2" [attr.y2]="link.y2"
+                    class="link"></line>
+            }
         </g>
         <g>
-            <line *ngFor="let link of repo.links" [attr.x1]="link.x1"
-                [attr.y1]="link.y1" [attr.x2]="link.x2" [attr.y2]="link.y2"
-                class="link"></line>
-        </g>
-        <g>
-            <g *ngFor="let commit of repo.commits">
-                <circle [attr.cx]="commit.x" [attr.cy]="commit.y" class="commit-circle" r="30"></circle>
-                <text *ngIf="commit.name" [attr.x]="commit.x" [attr.y]="commit.y" font-size="20" font-family="Karla"
-                    text-anchor="middle" dominant-baseline="middle" class="commit-text"> {{ commit.name }} </text>
-            </g>
+            @for (commit of repo.commits; track commit) {
+                <g>
+                    <circle [attr.cx]="commit.x" [attr.cy]="commit.y" class="commit-circle" r="30"></circle>
+                    @if (commit.name) {
+                        <text [attr.x]="commit.x" [attr.y]="commit.y" font-size="20" font-family="Karla"
+                            text-anchor="middle" dominant-baseline="middle" class="commit-text"> {{ commit.name }} </text>
+                    }
+                </g>
+            }
         </g>
     </g>
+    }
 </svg>
+}

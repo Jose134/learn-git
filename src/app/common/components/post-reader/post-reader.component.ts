@@ -1,4 +1,4 @@
-import { CommonModule, NgIf } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MarkdownComponent } from '../markdown/markdown.component';
 import { FileLoaderService } from '../../services/file-loader-service';
