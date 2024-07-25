@@ -1,10 +1,16 @@
+@if (this.article?.tags?.length ?? 0 > 0) {
+
 <div id="chips-container">
-    <app-chips *ngIf="this.article?.tags?.length ?? 0 > 0" [chips]="this.article?.tags ?? []"></app-chips>
+    <app-chips [chips]="this.article?.tags ?? []"></app-chips>
 </div>
+
+}
 
 <app-post-reader [src]="this.article?.filepath ?? null"></app-post-reader>
 
-<div *ngIf="this.article?.author && this.article?.author?.trim() !== ''" class="author-container">
+@if (this.article?.author && this.article?.author?.trim() !== '') {
+
+<div class="author-container">
     <hr/>
     <span>Written by:</span>
     <a  [href]="'https://github.com/'+this.article?.author"
@@ -15,21 +21,29 @@
     </a>
 </div>
 
-<div *ngIf="this.previousRoute || this.nextRoute" class="relative-navigation-container">
+}
+
+@if (this.previousRoute || this.nextRoute) {
+
+<div class="relative-navigation-container">
     <div>
-        <a  *ngIf="this.previousRoute"
-            [routerLink]="'/article/'+this.previousRoute"
-            (click)="this.scrollTop()"
-            class="rel-nav-link rel-nav-link-prev">
-            Previous
-        </a>
+        @if (this.previousRoute) {
+            <a [routerLink]="'/article/'+this.previousRoute"
+                (click)="this.scrollTop()"
+                class="rel-nav-link rel-nav-link-prev">
+                Previous
+            </a>
+        }
     </div>
     <div>
-        <a  *ngIf="this.nextRoute"
-            [routerLink]="'/article/'+this.nextRoute"
-            (click)="this.scrollTop()"
-            class="rel-nav-link rel-nav-link-next">
-            Next
-        </a>
+        @if (this.nextRoute) {
+            <a [routerLink]="'/article/'+this.nextRoute"
+                (click)="this.scrollTop()"
+                class="rel-nav-link rel-nav-link-next">
+                Next
+            </a>
+        }
     </div>
 </div>
+
+}

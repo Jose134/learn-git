@@ -1,5 +1,6 @@
-<ng-template [ngIf]="this.src" [ngIfElse]="notFound">
+@if (this.src) {
     <app-markdown ngSkipHydration [markdown]="this.fileContent ?? 'Error loading file :C'"></app-markdown>
-</ng-template>
-
-<ng-template #notFound>Sorry, this article doesn't seem to exist :C</ng-template>
+}
+@else {
+    Sorry, this article doesn't seem to exist :C
+}

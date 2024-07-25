@@ -1,7 +1,11 @@
-<ng-container *ngIf="this.chips">
+@if (this.chips) {
+
     <div class="chips">
-        <div class="chip" *ngFor="let chip of this.chips">
-            {{ chip }}
-        </div>
+        @for (chip of this.chips; track chip) {
+            <div class="chip">
+                {{ chip }}
+            </div>
+        }
     </div>
-</ng-container>
+
+}
